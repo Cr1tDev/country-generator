@@ -7,5 +7,29 @@
     <script defer src="script.js"></script>
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <main class="main">
+      <h1 class="title">Country Generator</h1>
+      <div class="countries">
+        <article class="country">
+          <div class="img-contianer">
+            <img src="" alt="country flag" class="country__img" />
+          </div>
+          <div class="country__data">
+            <h3 class="country__name">COUNTRY</h3>
+            <h4 class="country__region">REGION</h4>
+            <p class="country__row"><span>👫</span>POP people</p>
+            <p class="country__row"><span>🗣️</span>LANG</p>
+            <p class="country__row"><span>💰</span>CUR</p>
+          </div>
+        </article>
+      </div>
+      <input
+        type="text"
+        class="country__input"
+        placeholder="Enter country name"
+      />
+      <button class="btn-country">Generate the country</button>
+    </main>
+  </body>
 </html>
