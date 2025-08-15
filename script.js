@@ -19,9 +19,9 @@ const renderCountry = function (country) {
             <h3 class="country__name">${data.name.official}</h3>
             <h4 class="country__region">${data.region}</h4>
             <p class="country__row"><span>👫</span>${Number(
-              data.population / 10000000
-            )}</p>
-            <p class="country__row"><span>🗣️</span>${data.languages.fill}</p>
+              data.population / 1000000
+            ).toFixed(1)}m</p>
+            <p class="country__row"><span>🗣️</span>${data.languages.fil}</p>
             <p class="country__row"><span>💰</span>${
               data.currencies.PHP.name
             }</p>
@@ -35,11 +35,17 @@ const renderCountry = function (country) {
 const getCountryData = function (country) {
   fetch(`https://restcountries.com/v3.1/name/${country}`)
     .then((response) => {
-      if (!response) return;
+      if (!response.ok) {
+        throw new Error(`Something went wrong ${response.status}`);
+      }
       return response.json();
     })
     .then((data) => {
+      if (!data) throw new Error(`No country found!`);
       renderCountry(data[0]);
+    })
+    .catch((err) => {
+      console.log(err);
     });
 };
 
