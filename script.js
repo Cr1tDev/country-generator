@@ -11,18 +11,25 @@ const renderCountry = function (country) {
   const html = `
         <article class="country">
           <div class="img-contianer">
-            <img src="${data.flags.png}" alt="country flag" class="country__img" />
+            <img src="${
+              data.flags.png
+            }" alt="country flag" class="country__img" />
           </div>
           <div class="country__data">
-            <h3 class="country__name">COUNTRY</h3>
-            <h4 class="country__region">REGION</h4>
-            <p class="country__row"><span>👫</span>POP people</p>
-            <p class="country__row"><span>🗣️</span>LANG</p>
-            <p class="country__row"><span>💰</span>CUR</p>
+            <h3 class="country__name">${data.name.official}</h3>
+            <h4 class="country__region">${data.region}</h4>
+            <p class="country__row"><span>👫</span>${Number(
+              data.population / 10000000
+            )}</p>
+            <p class="country__row"><span>🗣️</span>${data.languages.fill}</p>
+            <p class="country__row"><span>💰</span>${
+              data.currencies.PHP.name
+            }</p>
           </div>
         </article>
   `;
   countryContaienr.insertAdjacentHTML("beforeend", html);
+  countryContaienr.style.opacity = 1;
 };
 
 const getCountryData = function (country) {

@@ -76,12 +76,13 @@ body {
 }
 
 .img-contianer {
+  overflow: hidden;
   flex: 1;
 }
 
 .country__img {
-  width: 30rem;
-  height: 17rem;
+  /* width: 30rem; */
+  height: 80%;
   object-fit: cover;
   background-color: #eee;
   border-top-left-radius: 0.7rem;
