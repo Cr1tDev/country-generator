@@ -30,12 +30,12 @@ body {
 }
 
 .title {
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
 .countries {
   /* margin-bottom: 8rem; */
-  width: 60%;
+  min-width: 400px;
   height: 60%;
   margin: 35px 0;
   display: flex;
@@ -143,10 +143,10 @@ body {
 }
 
 .country__input {
-  height: 50px;
-  width: 400px;
+  height: 40px;
+  width: 60%;
   padding: 5px;
   border: 1px solid black;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
 }
